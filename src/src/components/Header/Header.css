@@ -42,19 +42,3 @@
   .nav a:hover {
     color: #a78bfa;
   }
-  
-  .cta {
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 9999px;
-    padding: 0.5rem 1.2rem;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .cta:hover {
-    background: var(--primary);
-  }
-  

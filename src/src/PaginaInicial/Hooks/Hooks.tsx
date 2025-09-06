@@ -7,7 +7,13 @@ import {
   CardContent,
 } from "@mui/material";
 import { theme } from "../../themes";
-import Dialogs from "./Dialogs";
+import DialogUseState from "./Dialogs/UseState";
+import DialogUseEffect from "./Dialogs/UseEffect";
+import DialogUseContext from "./Dialogs/UseContext";
+import DialogUseMemo from "./Dialogs/UseMemo";
+import DialogUseRef from "./Dialogs/UseRef";
+import DialogUseReducer from "./Dialogs/UseReducer";
+import DialogUseCallback from "./Dialogs/UseCallback";
 
 export default function Hooks() {
   return (
@@ -48,17 +54,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
         useState
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useState é um hook que permite adicionar estado a componentes funcionais.
-      </Typography>
-      <Dialogs />
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseState 
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
   <Card
@@ -71,16 +81,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
         useEffect
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useEffect é um hook que permite adicionar efeitos colaterais a componentes funcionais.
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseEffect 
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
   <Card
@@ -93,16 +108,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
         useContext
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useContext é um hook que permite compartilhar valores entre componentes funcionais.
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseContext
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
   <Card
@@ -115,16 +135,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
-        useContext
+        useMemo
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useContext é um hook que permite compartilhar valores entre componentes funcionais.
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseMemo 
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
   <Card
@@ -137,16 +162,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
-        useContext
+        useRef
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useContext é um hook que permite compartilhar valores entre componentes funcionais.
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseRef 
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
   <Card
@@ -159,16 +189,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
-        useContext
+        useReducer
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useContext é um hook que permite compartilhar valores entre componentes funcionais.
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseReducer 
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
   <Card
@@ -181,16 +216,21 @@ export default function Hooks() {
       flexDirection: "column",
     }}
   >
-    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", height: "100%", gap: 2 }}>
       <Typography variant="h6" fontWeight={500} fontSize={24} sx={{ color: "#e4e3e6", fontWeight: "bold" }}>
-        useContext
+        useCallback
       </Typography>
-      <Typography variant="body1" color="#e4e3e6" sx={{ mt: 2, mb: 2 }}>
-        O useContext é um hook que permite compartilhar valores entre componentes funcionais.
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
-        Ver exemplo
-      </Button>
+      <DialogUseCallback 
+        renderTrigger={(open) => (
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={open}
+            sx={{ mt: "auto", backgroundColor: theme.palette.primary.main }}>
+            Ver exemplo
+          </Button>
+        )}
+      />
     </CardContent>
   </Card>
 </Box>
